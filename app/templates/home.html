@@ -1,0 +1,27 @@
+<h1>List of courses</h1>
+<table width="100%" border="2px solid red">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Contact</th>
+        <th>Message</th>
+
+
+    </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.contact}}</td>
+            <td>{{i.message}}</td>
+            <td>
+                <a href="{% url 'edit' i.id %}">Edit</a>
+                <a href="{% url 'delete' i.id %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+        
+</table>
